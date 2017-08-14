@@ -5,15 +5,31 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
+var articles={
+'article-one' : {
+    heading:'APP Learning',
+    content: `
+ <p>
+    This is first webpage.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.
+    </p>`
+
+    
+    
+},
+'article-two':{   
     heading:'APP Learning',
     content: `
  <p>
     This is second webpage.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.
     </p>`
-
-    
-    
+},
+'article-three':{    
+    heading:'APP Learning',
+    content: `
+ <p>
+    This is third webpage.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.I am doing mobile app course from IIT Madras.
+    </p>`
+}
 };
 function createtemplate(data){
 var heading=data.heading;
@@ -56,17 +72,11 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/ui/article-one.html', function (req, res) {
-  res.send(createtemplate(articleone));
+app.get('/ui/:articlesName', function (req, res) {
+    var articlesName=request.param.articlesName;
+  res.send(createtemplate(articles(articleName)));
 });
 
-app.get('/ui/article-two.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/ui/article-three.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
