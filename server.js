@@ -72,9 +72,9 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/ui/:articlesName', function (req, res) {
-    var articlesName=request.param.articlesName;
-  res.send(createtemplate(articles(articleName)));
+app.get('/ui/:articleName', function (req, res) {
+    var articleName=request.param.articleName;
+  res.send(createtemplate(articles[articleName]));
 });
 
 
