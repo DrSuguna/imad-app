@@ -73,7 +73,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/ui/:articleName', function (req, res) {
-    var articleName=article-one;
+    var articleName='article-one';
   res.send(createtemplate(articles[articleName]));
 });
 
