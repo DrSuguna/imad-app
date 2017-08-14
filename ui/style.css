@@ -19,12 +19,13 @@ body {
 .img-medium {
     height: 200px;
 }
+h1{
+    text-decoration:underline;
+}
 .container{
     max-width:500px;
     margin: 0 auto;
     padding-top:10px;
 }
-.h1{
-    text-decoration:underline;
-}
+
 
