@@ -1,3 +1,3 @@
 console.log('Loaded!');
-var element=document.getElementById('main-text')
-element.innerHtml='You have changed the text'
+var element=document.getElementById('main-text');
+element.innerHtml='You have changed the text';
